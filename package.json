@@ -1,9 +1,12 @@
 {
-  "name": "mcp-kroki",
+  "name": "@tkoba1974/mcp-kroki",
   "version": "1.0.0",
   "description": "A Model Context Protocol server for converting Mermaid diagrams to SVG using Kroki.io",
   "type": "module",
   "main": "build/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsc",
     "start": "node build/index.js",

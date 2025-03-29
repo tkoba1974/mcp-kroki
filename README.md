@@ -40,7 +40,10 @@ npm run link
 npxを使用して直接実行することも可能です：
 
 ```bash
-# ビルド後にローカルのプロジェクトディレクトリから実行
+# npmレジストリから直接実行（インストール不要）
+npx @tkoba1974/mcp-kroki
+
+# ローカルプロジェクトをビルド後に実行
 npm run build
 npx .
 
@@ -128,7 +131,7 @@ Add to your Claude Desktop configuration file (claude_desktop_config.json):
 }
 ```
 
-npxを使用する場合：
+npxを使用する場合（npmレジストリから直接実行）：
 
 ```json
 {
@@ -138,7 +141,7 @@ npxを使用する場合：
       "capability_id": "kroki-server",
       "command": [
         "npx",
-        "/path/to/mcp-kroki"
+        "@tkoba1974/mcp-kroki"
       ]
     }
   ]
