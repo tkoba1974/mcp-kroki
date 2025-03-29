@@ -14,38 +14,13 @@ An MCP (Model Context Protocol) server for converting Mermaid diagrams to SVG im
 
 ## Installation
 
-### 実行のためのインストール
+### local install
 
 ```bash
 git clone https://github.com/tkoba1974/mcp-kroki.git
 cd mcp-kroki
 npm install
 npm run build
-```
-
-### グローバルインストール
-
-プロジェクトディレクトリで以下を実行すると、コマンドとして使用できるようになります：
-
-```bash
-npm install
-npm run build
-npm run link
-```
-
-これにより、`mcp-kroki`コマンドがグローバルに利用可能になります。
-
-### npxで実行
-
-npxを使用して直接実行することも可能です：
-
-```bash
-# ビルド後にローカルのプロジェクトディレクトリから実行
-npm run build
-npx .
-
-# または、プロジェクトをパスで指定して実行
-npx /path/to/mcp-kroki
 ```
 
 ## Usage
@@ -97,51 +72,31 @@ The server uses the Kroki.io API to convert diagrams. The diagram content is com
 
 Add to your Claude Desktop configuration file (claude_desktop_config.json):
 
+### local install:
 ```json
 {
-  "external_tools": [
-    {
-      "name": "mcp-kroki",
-      "capability_id": "kroki-server",
-      "command": [
-        "node",
-        "/path/to/mcp-kroki/build/index.js"
-      ]
+  "mcpServers": {
+    "mcp-kroki": {
+      "command": "node",
+      "args": ["/path/to/mcp-kroki/build/index.js"]
     }
-  ]
+  }
 }
 ```
 
-グローバルインストールした場合は、次のようにより簡単な設定も可能です：
+### npx：
 
 ```json
 {
-  "external_tools": [
-    {
-      "name": "mcp-kroki",
-      "capability_id": "kroki-server",
-      "command": [
-        "mcp-kroki"
+  "mcpServers": {
+    "mcp-kroki": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@tkoba1974/mcp-kroki"
       ]
     }
-  ]
-}
-```
-
-npxを使用する場合：
-
-```json
-{
-  "external_tools": [
-    {
-      "name": "mcp-kroki",
-      "capability_id": "kroki-server",
-      "command": [
-        "npx",
-        "/path/to/mcp-kroki"
-      ]
-    }
-  ]
+  }
 }
 ```
 
