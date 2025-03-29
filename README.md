@@ -64,6 +64,20 @@ const result = await callTool('download_diagram', {
 
 The server uses the Kroki.io API to convert diagrams. The diagram content is compressed and encoded before being sent to Kroki.io.
 
+## Usage with Claude
+
+Add to your Claude configuration:
+```
+{
+  "mcpServers": {
+    "mcp-kroki": {
+      "command": "node",
+      "args": ["Your Install Directory/mcp-kroki/build/index.js"]
+    }
+  }
+}
+```
+
 ## License
 
 MIT
