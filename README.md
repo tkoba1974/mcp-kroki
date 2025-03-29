@@ -15,6 +15,8 @@ An MCP (Model Context Protocol) server for converting Mermaid diagrams to SVG im
 ## Installation
 
 ```bash
+git clone https://github.com/tkoba1974/mcp-kroki.git
+cd mcp-kroki
 npm install
 npm run build
 ```
