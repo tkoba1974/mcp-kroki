@@ -45,6 +45,7 @@ Parameters:
 - `content`: The diagram content in the specified format
 - `outputPath`: The path where the diagram should be saved
 - `outputFormat` (optional): The output format (svg, png, pdf, jpeg)
+- `scale` (optional, number, default: 1.0): Scaling factor for the diagram dimensions. Currently only affects SVG output by attempting to modify width/height attributes. Minimum value is 0.1.
 
 ## Example
 
